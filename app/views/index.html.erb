@@ -1,0 +1,11 @@
+<h1>Welcome to Stack Match!</h1>
+
+<%= form_for @feed do |f| %>
+  <%= f.label :search_term %>
+  <%= f.text_field :search_term %>
+  <%= f.submit 'See Jobs' %>
+<% end %>
+
+<% if @feed.results %>
+  <%= @feed.results.items[0] %>
+<% end %>

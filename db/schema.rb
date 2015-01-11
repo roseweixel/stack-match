@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110224927) do
+ActiveRecord::Schema.define(version: 20150111022344) do
 
   create_table "feeds", force: true do |t|
     t.string "search_term"
     t.text   "results"
+    t.string "location"
   end
 
 end

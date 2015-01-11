@@ -3,9 +3,13 @@
 <%= form_for @feed do |f| %>
   <%= f.label :search_term %>
   <%= f.text_field :search_term %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
   <%= f.submit 'See Jobs' %>
 <% end %>
 
 <% if @feed.results %>
-  <%= @feed.results.items[0] %>
+  <% @feed.results.items.each do |item| %>
+    <li><%= link_to item.title, item.link, target: '_blank' %></li>
+  <% end %>
 <% end %>
